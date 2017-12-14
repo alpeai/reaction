@@ -18,6 +18,7 @@ export const methods = {
    * @return {String} returns update/insert result
    */
   "discounts/deleteRate": function (discountId) {
+    console.log("discounts/deleteRate");
     check(discountId, String);
 
     // check permissions to delete
@@ -39,6 +40,7 @@ export const methods = {
    * @return {Number} returns update result
    */
   "discounts/setRate": function (cartId, discountRate, discounts) {
+    console.log("discounts/setRate");
     check(cartId, String);
     check(discountRate, Number);
     check(discounts, Match.Optional(Array));
@@ -61,6 +63,7 @@ export const methods = {
    * @return {String} returns update result
    */
   "discounts/transaction": function (cartId, discountId) {
+    console.log("discounts/transaction");
     check(cartId, String);
     check(discountId, String);
 
@@ -86,6 +89,7 @@ export const methods = {
    * @return {Object}  returns discount object
    */
   "discounts/calculate": function (cart) {
+    console.log("discounts/calculate");
     check(cart, Object); // Reaction.Schemas.Cart
 
     let currentDiscount = 0;

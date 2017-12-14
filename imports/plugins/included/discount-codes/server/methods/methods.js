@@ -25,6 +25,7 @@ export const methods = {
    * @return {Number} returns discount total
    */
   "discounts/codes/discount": function (cartId, discountId) {
+    console.log("discounts/codes/discount");
     check(cartId, String);
     check(discountId, String);
     let discount = 0;
@@ -47,6 +48,7 @@ export const methods = {
    * @return {Number} returns discount total
    */
   "discounts/codes/credit": function (cartId, discountId) {
+    console.log("discounts/codes/credit");
     check(cartId, String);
     check(discountId, String);
     let discount = 0;
@@ -62,6 +64,7 @@ export const methods = {
    * @return {Number} returns discount total
    */
   "discounts/codes/sale": function (cartId, discountId) {
+    console.log("discounts/codes/sale");
     check(cartId, String);
     check(discountId, String);
     let discount = 0;
@@ -87,6 +90,7 @@ export const methods = {
    * @return {Number} returns discount total
    */
   "discounts/codes/shipping": function (cartId, discountId) {
+    console.log("discounts/codes/shipping");
     check(cartId, String);
     check(discountId, String);
     let discount = 0;
@@ -108,7 +112,9 @@ export const methods = {
    * @param  {String} qty create this many additional codes
    * @return {String} returns update/insert result
    */
+  // why is this not discounts/codes/addCode ?
   "discounts/addCode": function (modifier, docId) {
+    console.log("discounts/addCode", modifier, docId);
     check(modifier, Object);
     check(docId, Match.OneOf(String, null, undefined));
 
@@ -133,6 +139,7 @@ export const methods = {
    * @return {String} returns update/insert result
    */
   "discounts/codes/remove": function (id, codeId, collection = "Cart") {
+    console.log("discounts/codes/remove");
     check(id, String);
     check(codeId, String);
     check(collection, String);
@@ -182,6 +189,7 @@ export const methods = {
    * @return {Boolean} returns true if successfully applied
    */
   "discounts/codes/apply": function (id, code, collection = "Cart") {
+    console.log("discounts/codes/apply");
     check(id, String);
     check(code, String);
     check(collection, String);

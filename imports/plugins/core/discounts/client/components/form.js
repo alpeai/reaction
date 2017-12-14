@@ -20,6 +20,7 @@ export default class DiscountForm extends Component {
       this.setState({ validationMessage: "" });
       const { discount } = this.state;
       // handle discount code validation messages after attempt to apply
+      console.log("calling method discounts/codes/apply");
       Meteor.call("discounts/codes/apply", this.props.id, discount, this.props.collection, (error, result) => {
         if (error) {
           Alerts.toast(i18next.t(error.reason), "error");

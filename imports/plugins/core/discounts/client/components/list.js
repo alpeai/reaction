@@ -15,6 +15,7 @@ class DiscountList extends Component {
 
   // handle remove click
   handleClick(event, codeId) {
+    console.log("discounts/codes/remove");
     return Meteor.call("discounts/codes/remove", this.props.id, codeId, this.props.collection);
   }
   // list items
